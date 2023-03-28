@@ -37,19 +37,19 @@ export default function Home() {
                 <div className="about">
                     <div className="aboutInfo">
                         <span className="aboutInfo_title">About us</span>
-                        <p><b>We crossed the world to build Axel. Now,
-                            Axel is always right at your side to build
+                        <p><b>We crossed the world to build DataSoft. Now,
+                            DataSoft is always right at your side to build
                             something for you!</b>
                             You hear some crazy stories about folks meeting
                             online, but you won’t hear a story crazier
-                            than Axel. Phil lived in New York, and Adi lived on the other side of the globe
+                            than DataSoft. Phil lived in New York, and Adi lived on the other side of the globe
                             in Bishkek, Kyrgyzstan. Their paths crossed online as they
                             worked on mutual projects. They made a great team with Phil handling
                             the front-end, mobile development while Adi worked
                             his magic as a back-end developer. After a while, Phil thought it
                             would be nice to take a week-long trip to Central Asia and meet his
                             online coworker. That week soon turned into two full years of Phil and Adi
-                            building something really special. The result? Axel. <a href='#'>View More</a>
+                            building something really special. The result? DataSoft. <a href='#'>View More</a>
                         </p>
                     </div>
                     <img src={aboutImg} alt="" />

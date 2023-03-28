@@ -12,20 +12,20 @@ export default function Footer() {
                     <div className="footerContact">
                         <a href="" className="footeradress">
                             <button><img src={phone} alt="" /></button>
-                            <span>+1 (646) 418 9064</span>
+                            <span>+998 (33)564-64-04</span>
                         </a>
                         <a href="" className="footeradress">
                             <button><img src={sms} alt="" /></button>
-                            <span>info@axelhub.com</span>
+                            <span>info@data-soft.uz</span>
                         </a>
                         <a href="" className="footeradress">
                             <button><img src={gps} alt="" /></button>
-                            <span>New York (NY), Tampa (FL), Bishkek (KG)</span>
+                            <span>Xorazm (UZ)</span>
                         </a>
                     </div>
                     <div className="footerInfos">
                         <ul>
-                            <span>Service</span>
+                            <span>Xizmatlar</span>
                             <li>UI/UX Design</li>
                             <li>Mobile Development</li>
                             <li>Web Development</li>
