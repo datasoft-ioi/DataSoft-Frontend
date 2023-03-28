@@ -28,7 +28,7 @@ export default function Home() {
             <header>
                 <Navbar />
                 <div className="header">
-                    <span className="headerTItle">Making Software a Reality.</span>
+                    <span className="headerTItle">Orzudagi Dasturga Ega Bo'l</span>
                     <span className="headerInfo">Just Think. We'll do the rest.</span>
                     <button className="headerBtn">Get in touch</button>
                 </div>
