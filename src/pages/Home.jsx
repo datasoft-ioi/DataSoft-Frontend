@@ -15,22 +15,35 @@ import soft1 from '../images/soft1.svg'
 import soft2 from '../images/soft2.svg'
 import soft3 from '../images/soft3.svg'
 import soft4 from '../images/soft4.svg'
+import { useEffect } from 'react'
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { useState } from 'react'
 import Navbar from '../utils/Navbar'
 import Footer from '../utils/Footer'
 import ImgGallary from './Gallary'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Home() {
+
+    async function HeaderTitle() {
+        const response = await axios.get('https://soft.datashop.uz/hometitle/')
+        setHeaderTitle(response.data);
+    }
+    useEffect(() => {
+        HeaderTitle();
+    }, []);
+
+    const [headerTitle, setHeaderTitle] = useState([])
+
 
     return (
         <div className="container">
             <header>
                 <Navbar />
                 <div className="header">
-                    <span className="headerTItle">Orzudagi Dasturga Ega Bo'l</span>
-                    <span className="headerInfo">Shunchaki o'ylang. Qolganini biz qilamiz.</span>
+                    <span className="headerTItle">{headerTitle.length > 0 && headerTitle[0].uz_title}</span>
+                    <span className="headerInfo">headerTitle.length > 0 && headerTitle[0].uz_mini_desc</span>
                     <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
                 </div>
             </header>
@@ -57,7 +70,7 @@ export default function Home() {
                 </div>
                 <div className="gallery">
                     <span className="galleryTitle">Gallery</span>
-                    <ImgGallary/>
+                    <ImgGallary />
                 </div>
                 <div className="portfolio">
                     <span className="portfolioTitle">Our Projects</span>
