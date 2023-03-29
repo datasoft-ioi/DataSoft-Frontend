@@ -8,7 +8,7 @@ import { AppContext } from "../context/AppContext"
 
 export default function Navbar() {
 
-    const {lauga , setLauga} = useContext(AppContext)
+    const {lauga , setLauga , LaugaChange} = useContext(AppContext)
 
     const [burger, setBurger] = useState('')
     function isOpen() {
@@ -31,7 +31,7 @@ export default function Navbar() {
         }
     ]
 
-
+    console.log(lauga);
     return (
         <nav className='con'>
             <Link to='/'><img src={datalogo} alt="" /></Link>
@@ -42,12 +42,9 @@ export default function Navbar() {
                 <Link to='/portfolio'><li>Portfolio</li></Link>
                 <Link to='/faq'><li>FAQ's</li></Link>
                 <Link to='/contact'><button>Contact Us</button></Link>
-                <div className="tilChange" onClick={languageChange}>
-                    {
-                        if () {
-                            
-                        }
-                    }
+                <div className="tilChange" onClick={LaugaChange}> 
+                    <img src={lauga == 'uzb' ? uzb[0].img : rus[0].img} alt="" />
+                    <span>{lauga == 'uzb' ? uzb[0].title : rus[0].title}</span>
                 </div>
             </ul>
         </nav>

@@ -36,10 +36,18 @@ export default function Home() {
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
-    const [lauga , setlauga] = useState('uzb')
+    const [lauga , setlauga] = useState('rus')
+
+    function LaugaChange() {
+        if (lauga == 'uzb') {
+            setlauga('rus')
+        } else {
+            setlauga('uzb')
+        }
+    }
 
     return (
-        <AppContext.Provider value={{lauga , setlauga}}>
+        <AppContext.Provider value={{lauga , setlauga , LaugaChange}}>
             <div className="container">
                 <header>
                     <Navbar/>
@@ -47,7 +55,7 @@ export default function Home() {
                         headerTitle.map(item => (
                             <div className="header">
                                 <span className="headerTItle">{lauga == 'uzb' ? item.uz_title : item.ru_title}</span>
-                                <span className="headerInfo">{item.uz_mini_desc}</span>
+                                <span className="headerInfo">{lauga == 'uzb' ? item.uz_mini_desc : item.ru_mini_desc}</span>
                                 <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
                             </div>
                         ))
