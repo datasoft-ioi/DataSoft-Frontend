@@ -41,11 +41,15 @@ export default function Home() {
         <div className="container">
             <header>
                 <Navbar />
-                <div className="header">
-                    <span className="headerTItle">{headerTitle.length > 0 && headerTitle[0].uz_title}</span>
-                    <span className="headerInfo">{headerTitle.length > 0 && headerTitle[0].uz_mini_desc}</span>
-                    <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
-                </div>
+                {
+                    headerTitle.map(item => (
+                        <div className="header">
+                            <span className="headerTItle">{item.uz_title}</span>
+                            <span className="headerInfo">{item.uz_mini_desc}</span>
+                            <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
+                        </div>
+                    ))
+                }
             </header>
             <main>
                 <div className="about">
