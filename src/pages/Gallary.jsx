@@ -27,6 +27,7 @@ function ImgGallary({ index }) {
 
   const viewImage = (img, i) => {
     setData({ img, i })
+    setUrl('')
     console.log({ img, i });
   }
 
@@ -43,22 +44,16 @@ function ImgGallary({ index }) {
       setData({ img: '', i: 0 });
     }
   }
-  // function setImg() {
-  //   if (viewImage) {
-  //     data.img
-  //   }else {
-  //     ''
-  //   } 
-  // }
+  const [url , setUrl] = useState('')
 
   return (
     <>
       {data.img &&
         <div className="openImg">
           <button className="imgClose" style={{ position: 'absolute', top: '10px', right: '10px' }} onClick={() => imgAction()}> <IoMdClose style={{ color: '#FFFFFF' }} /> </button>
-          <button className="imgPrev" style={{ fontSize: '36px' }} onClick={() => imgAction('prev-img')} >{'<'}</button>
-          <img src={URL + data.img.image} style={{ width: 'auto', maxWidth: '90%', maxHeight: '90%' }} />
-          <button className="imgNext" style={{ fontSize: '36px' }} onClick={() => imgAction('next-img')} >{'>'}</button>
+          <button className="imgPrev" style={{ fontSize: '36px' }} onClick={() => imgAction('prev-img') + setUrl(URL)} >{'<'}</button>
+          <img src={url + data.img.image} style={{ width: 'auto', maxWidth: '90%', maxHeight: '90%' }} />
+          <button className="imgNext" style={{ fontSize: '36px' }} onClick={() => imgAction('next-img') + setUrl(URL)} >{'>'}</button>
         </div>
       }
       <ResponsiveMasonry
