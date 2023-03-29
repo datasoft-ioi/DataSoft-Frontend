@@ -43,7 +43,7 @@ export default function Home() {
                 <Navbar />
                 <div className="header">
                     <span className="headerTItle">{headerTitle.length > 0 && headerTitle[0].uz_title}</span>
-                    <span className="headerInfo">headerTitle.length > 0 && headerTitle[0].uz_mini_desc</span>
+                    <span className="headerInfo">{headerTitle.length > 0 && headerTitle[0].uz_mini_desc}</span>
                     <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
                 </div>
             </header>
