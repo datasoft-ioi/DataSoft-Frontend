@@ -23,6 +23,7 @@ import Footer from '../utils/Footer'
 import ImgGallary from './Gallary'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { AppContext } from '../context/AppContext'
 
 export default function Home() {
 
@@ -35,147 +36,149 @@ export default function Home() {
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
-
+    const [lauga , setlauga] = useState('uzb')
 
     return (
-        <div className="container">
-            <header>
-                <Navbar />
-                {
-                    headerTitle.map(item => (
-                        <div className="header">
-                            <span className="headerTItle">{item.uz_title}</span>
-                            <span className="headerInfo">{item.uz_mini_desc}</span>
-                            <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
+        <AppContext.Provider value={{lauga , setlauga}}>
+            <div className="container">
+                <header>
+                    <Navbar/>
+                    {
+                        headerTitle.map(item => (
+                            <div className="header">
+                                <span className="headerTItle">{lauga == 'uzb' ? item.uz_title : item.ru_title}</span>
+                                <span className="headerInfo">{item.uz_mini_desc}</span>
+                                <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
+                            </div>
+                        ))
+                    }
+                </header>
+                <main>
+                    <div className="about">
+                        <div className="aboutInfo">
+                            <span className="aboutInfo_title">About us</span>
+                            <p><b>We crossed the world to build DataSoft. Now,
+                                DataSoft is always right at your side to build
+                                something for you!</b>
+                                You hear some crazy stories about folks meeting
+                                online, but you won’t hear a story crazier
+                                than DataSoft. Phil lived in New York, and Adi lived on the other side of the globe
+                                in Bishkek, Kyrgyzstan. Their paths crossed online as they
+                                worked on mutual projects. They made a great team with Phil handling
+                                the front-end, mobile development while Adi worked
+                                his magic as a back-end developer. After a while, Phil thought it
+                                would be nice to take a week-long trip to Central Asia and meet his
+                                online coworker. That week soon turned into two full years of Phil and Adi
+                                building something really special. The result? DataSoft. <a href='#'>View More</a>
+                            </p>
                         </div>
-                    ))
-                }
-            </header>
-            <main>
-                <div className="about">
-                    <div className="aboutInfo">
-                        <span className="aboutInfo_title">About us</span>
-                        <p><b>We crossed the world to build DataSoft. Now,
-                            DataSoft is always right at your side to build
-                            something for you!</b>
-                            You hear some crazy stories about folks meeting
-                            online, but you won’t hear a story crazier
-                            than DataSoft. Phil lived in New York, and Adi lived on the other side of the globe
-                            in Bishkek, Kyrgyzstan. Their paths crossed online as they
-                            worked on mutual projects. They made a great team with Phil handling
-                            the front-end, mobile development while Adi worked
-                            his magic as a back-end developer. After a while, Phil thought it
-                            would be nice to take a week-long trip to Central Asia and meet his
-                            online coworker. That week soon turned into two full years of Phil and Adi
-                            building something really special. The result? DataSoft. <a href='#'>View More</a>
-                        </p>
+                        <img src={aboutImg} alt="" />
                     </div>
-                    <img src={aboutImg} alt="" />
-                </div>
-                <div className="gallery">
-                    <span className="galleryTitle">Gallery</span>
-                    <ImgGallary />
-                </div>
-                <div className="portfolio">
-                    <span className="portfolioTitle">Our Projects</span>
-                    <div className="portfolios">
-                        <a href="https://www.tesla.com/"><img src={tesla} alt="" /></a>
-                        <a href="https://apple.com"><img src={apple} alt="" /></a>
-                        <a href="https://uzum.uz"><img src={uzum} alt="" /></a>
-                        <a href="https://www.spacex.com/"><img src={spesX} alt="" /></a>
+                    <div className="gallery">
+                        <span className="galleryTitle">Gallery</span>
+                        <ImgGallary />
                     </div>
-                </div>
-                <div className="services">
-                    <span className="servicesTitle">Our Core Services</span>
-                    <div className="servicesMain">
-                        <div className="servis">
-                            <div className="servisInfo">
-                                <span className="servisInfo_Title">Website Development</span>
-                                <p>Productive and engaging web solutions for smarter work and improved customer service</p>
-                                <div className="servisInfoBtns">
-                                    <button><img src={internet} alt="" /></button>
+                    <div className="portfolio">
+                        <span className="portfolioTitle">Our Projects</span>
+                        <div className="portfolios">
+                            <a href="https://www.tesla.com/"><img src={tesla} alt="" /></a>
+                            <a href="https://apple.com"><img src={apple} alt="" /></a>
+                            <a href="https://uzum.uz"><img src={uzum} alt="" /></a>
+                            <a href="https://www.spacex.com/"><img src={spesX} alt="" /></a>
+                        </div>
+                    </div>
+                    <div className="services">
+                        <span className="servicesTitle">Our Core Services</span>
+                        <div className="servicesMain">
+                            <div className="servis">
+                                <div className="servisInfo">
+                                    <span className="servisInfo_Title">Website Development</span>
+                                    <p>Productive and engaging web solutions for smarter work and improved customer service</p>
+                                    <div className="servisInfoBtns">
+                                        <button><img src={internet} alt="" /></button>
+                                    </div>
                                 </div>
+                                <img className='servisImg' src={servicesWeb} alt="" />
                             </div>
-                            <img className='servisImg' src={servicesWeb} alt="" />
-                        </div>
-                        <div className="servis">
-                            <div className="servisInfo">
-                                <span className="servisInfo_Title">Bot Development</span>
-                                <p>Native, hybrid, and cross-platform mobile apps for consumer-facing and corporate environments.</p>
-                                <div className="servisInfoBtns">
-                                    <button><img src={telegram} alt="" /></button>
-                                    <button><img src={discord} alt="" /></button>
-                                    <button><img src={whatsapp} alt="" /></button>
+                            <div className="servis">
+                                <div className="servisInfo">
+                                    <span className="servisInfo_Title">Bot Development</span>
+                                    <p>Native, hybrid, and cross-platform mobile apps for consumer-facing and corporate environments.</p>
+                                    <div className="servisInfoBtns">
+                                        <button><img src={telegram} alt="" /></button>
+                                        <button><img src={discord} alt="" /></button>
+                                        <button><img src={whatsapp} alt="" /></button>
+                                    </div>
                                 </div>
+                                <img className='servisImg' src={telegramBot} alt="" />
                             </div>
-                            <img className='servisImg' src={telegramBot} alt="" />
                         </div>
                     </div>
-                </div>
-                <div className="software">
-                    <span className="softwareTitle">Software Development Process</span>
-                    <div className="softwareMain">
-                        <img className='line' src={line} alt="" />
-                        <div className="softwareMainStructura left">
-                            <div className="softwareMainStructuraInfo">
-                                <span>Discover</span>
-                                <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                    <div className="software">
+                        <span className="softwareTitle">Software Development Process</span>
+                        <div className="softwareMain">
+                            <img className='line' src={line} alt="" />
+                            <div className="softwareMainStructura left">
+                                <div className="softwareMainStructuraInfo">
+                                    <span>Discover</span>
+                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                </div>
+                                <img src={soft1} alt="" className="softwareMainStructuraImg" />
                             </div>
-                            <img src={soft1} alt="" className="softwareMainStructuraImg" />
-                        </div>
-                        <div className="softwareMainStructura right">
-                            <div className="softwareMainStructuraInfo">
-                                <span>Design</span>
-                                <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                            <div className="softwareMainStructura right">
+                                <div className="softwareMainStructuraInfo">
+                                    <span>Design</span>
+                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                </div>
+                                <img src={soft2} alt="" className="softwareMainStructuraImg" />
                             </div>
-                            <img src={soft2} alt="" className="softwareMainStructuraImg" />
-                        </div>
-                        <div className="softwareMainStructura left">
-                            <div className="softwareMainStructuraInfo">
-                                <span>Build</span>
-                                <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                            <div className="softwareMainStructura left">
+                                <div className="softwareMainStructuraInfo">
+                                    <span>Build</span>
+                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                </div>
+                                <img src={soft3} alt="" className="softwareMainStructuraImg" />
                             </div>
-                            <img src={soft3} alt="" className="softwareMainStructuraImg" />
-                        </div>
-                        <div className="softwareMainStructura right">
-                            <div className="softwareMainStructuraInfo">
-                                <span>Deliver</span>
-                                <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                            <div className="softwareMainStructura right">
+                                <div className="softwareMainStructuraInfo">
+                                    <span>Deliver</span>
+                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                </div>
+                                <img src={soft4} alt="" className="softwareMainStructuraImg" />
                             </div>
-                            <img src={soft4} alt="" className="softwareMainStructuraImg" />
                         </div>
                     </div>
-                </div>
-                <div className="contact">
-                    <span className="contactTitle">Tell us about your project</span>
-                    <div className="contactMain">
-                        <div className="contactMainInfos">
-                            <input type="text" placeholder='First name' />
-                            <input type="text" placeholder='Last name' />
-                            <input type="text" placeholder='Email' />
-                            <input type="text" placeholder='Phone' />
-                            <select name="" id="">
-                                <option value="" selected disabled hidden>Budget</option>
-                                <option value="">0$-100$</option>
-                                <option value="">100$-300$</option>
-                                <option value="">300$-700$</option>
-                                <option value="">700$-1000$</option>
-                                <option value="">1000$-2000$</option>
-                                <option value="">2000$+</option>
-                            </select>
-                            <select name="" id="">
-                                <option value="" selected disabled hidden>Where did you hear about us?</option>
-                                <option value="">Google</option>
-                                <option value="">Instagram</option>
-                                <option value="">Telegram</option>
-                            </select>
+                    <div className="contact">
+                        <span className="contactTitle">Tell us about your project</span>
+                        <div className="contactMain">
+                            <div className="contactMainInfos">
+                                <input type="text" placeholder='First name' />
+                                <input type="text" placeholder='Last name' />
+                                <input type="text" placeholder='Email' />
+                                <input type="text" placeholder='Phone' />
+                                <select name="" id="">
+                                    <option value="" selected disabled hidden>Budget</option>
+                                    <option value="">0$-100$</option>
+                                    <option value="">100$-300$</option>
+                                    <option value="">300$-700$</option>
+                                    <option value="">700$-1000$</option>
+                                    <option value="">1000$-2000$</option>
+                                    <option value="">2000$+</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="" selected disabled hidden>Where did you hear about us?</option>
+                                    <option value="">Google</option>
+                                    <option value="">Instagram</option>
+                                    <option value="">Telegram</option>
+                                </select>
+                            </div>
+                            <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
+                            <button>Submit</button>
                         </div>
-                        <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
-                        <button>Submit</button>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </div>
+                </main>
+                <Footer />
+            </div>
+        </AppContext.Provider>
     )
 }

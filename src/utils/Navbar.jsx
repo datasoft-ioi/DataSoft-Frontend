@@ -1,12 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import datalogo from '../images/datalogo.png'
 import { Link } from "react-router-dom"
 import uzbFlag from '../images/1uzb.png'
 import rusFlag from '../images/1rus.png'
+import { AppContext } from "../context/AppContext"
 
 export default function Navbar() {
 
+    const {lauga , setLauga} = useContext(AppContext)
 
     const [burger, setBurger] = useState('')
     function isOpen() {
@@ -16,30 +18,18 @@ export default function Navbar() {
             setBurger('')
         }
     }
-    const [flag, setFlag] = useState([
+    const uzb =  [
         {
             img: uzbFlag,
             title: 'UZB'
         }
-    ])
+    ]
     const rus = [
         {
             img: rusFlag,
             title: 'RUS'
         }
     ]
-    function languageChange() {
-        if (flag[0].title === 'UZB') {
-            setFlag(rus)
-        } else {
-            setFlag([
-                {
-                    img: uzbFlag,
-                    title: 'UZB'
-                }
-            ])
-        }
-    }
 
 
     return (
@@ -53,8 +43,11 @@ export default function Navbar() {
                 <Link to='/faq'><li>FAQ's</li></Link>
                 <Link to='/contact'><button>Contact Us</button></Link>
                 <div className="tilChange" onClick={languageChange}>
-                    <img src={flag[0].img} alt="" />
-                    <span>{flag[0].title}</span>
+                    {
+                        if () {
+                            
+                        }
+                    }
                 </div>
             </ul>
         </nav>
