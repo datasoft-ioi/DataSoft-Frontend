@@ -36,7 +36,7 @@ export default function Home() {
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
-    const [lauga , setlauga] = useState('rus')
+    const [lauga , setlauga] = useState('uzb')
 
     function LaugaChange() {
         if (lauga == 'uzb') {

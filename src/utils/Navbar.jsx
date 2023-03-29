@@ -37,11 +37,11 @@ export default function Navbar() {
             <Link to='/'><img src={datalogo} alt="" /></Link>
             <HiOutlineMenuAlt1 className='navMenuBtn' size={'36px'} onClick={isOpen} />
             <ul className={burger}>
-                <Link to='/About'><li>About Us</li></Link>
-                <Link to='/services'><li>Service</li></Link>
-                <Link to='/portfolio'><li>Portfolio</li></Link>
-                <Link to='/faq'><li>FAQ's</li></Link>
-                <Link to='/contact'><button>Contact Us</button></Link>
+                <Link to='/About'><li>{lauga == 'uzb' ? 'Xaqimizda' : 'O нас'}</li></Link>
+                <Link to='/services'><li>{lauga == 'uzb' ? 'Xizmatlar' : 'Услуги'}</li></Link>
+                <Link to='/portfolio'><li>{lauga == 'uzb' ? 'Ishlarimiz' : 'портфолио'}</li></Link>
+                <Link to='/faq'><li>{lauga == 'uzb' ? 'Savollar' : 'Вопросы'}</li></Link>
+                <Link to='/contact'><button>{lauga == 'uzb' ? 'Aloqa' : 'Коммуникация'}</button></Link>
                 <div className="tilChange" onClick={LaugaChange}> 
                     <img src={lauga == 'uzb' ? uzb[0].img : rus[0].img} alt="" />
                     <span>{lauga == 'uzb' ? uzb[0].title : rus[0].title}</span>
