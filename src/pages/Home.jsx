@@ -20,6 +20,7 @@ import { useState } from 'react'
 import Navbar from '../utils/Navbar'
 import Footer from '../utils/Footer'
 import ImgGallary from './Gallary'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
 
@@ -30,7 +31,7 @@ export default function Home() {
                 <div className="header">
                     <span className="headerTItle">Orzudagi Dasturga Ega Bo'l</span>
                     <span className="headerInfo">Shunchaki o'ylang. Qolganini biz qilamiz.</span>
-                    <button className="headerBtn">Bog'laning</button>
+                    <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
                 </div>
             </header>
             <main>
