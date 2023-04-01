@@ -24,21 +24,25 @@ import ImgGallary from './Gallary'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
-import {app} from '../context/AppContext'
+import { ReactDOM } from 'react'
 
 export default function Home() {
 
     async function HeaderTitle() {
         const response = await axios.get('https://api.data-soft.uz/hometitle/')
+        const about = await axios.get('https://api.data-soft.uz/about/')
         setHeaderTitle(response.data);
+        setAboutTitle(about.data)
     }
     useEffect(() => {
         HeaderTitle();
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
+    const [aboutTitle , setAboutTitle] = useState([])
 
     const {lauga , app} = useContext(AppContext)
+    
 
     return (
         <>
@@ -56,23 +60,14 @@ export default function Home() {
                 </header>
                 <main>
                     <div className="about">
-                        <div className="aboutInfo">
-                            <span className="aboutInfo_title">About us</span>
-                            <p><b>We crossed the world to build DataSoft. Now,
-                                DataSoft is always right at your side to build
-                                something for you!</b>
-                                You hear some crazy stories about folks meeting
-                                online, but you won’t hear a story crazier
-                                than DataSoft. Phil lived in New York, and Adi lived on the other side of the globe
-                                in Bishkek, Kyrgyzstan. Their paths crossed online as they
-                                worked on mutual projects. They made a great team with Phil handling
-                                the front-end, mobile development while Adi worked
-                                his magic as a back-end developer. After a while, Phil thought it
-                                would be nice to take a week-long trip to Central Asia and meet his
-                                online coworker. That week soon turned into two full years of Phil and Adi
-                                building something really special. The result? DataSoft. <a href='#'>View More</a>
-                            </p>
-                        </div>
+                        {
+                            aboutTitle.map(item => (
+                                <div className="aboutInfo">
+                                <span className="aboutInfo_title">{lauga == 'uzb' ? item.title : item.rus_title}</span>
+                                <p>{lauga == 'uzb' ? item.desc : item.rus_desc}</p>
+                            </div>
+                            ))
+                        }
                         <img src={aboutImg} alt="" />
                     </div>
                     <div className="gallery">
