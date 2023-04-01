@@ -9,7 +9,7 @@ export default function Contact() {
     const handleInputChange = (event) => {
       setMessage(event.target.value);
     };
-  
+    
     const sendMessage = () => {
       const chatId = "2064891580"; // Telegram chat ID
       const token = "6242159717:AAFlCHciEkD4EDSldWbSLlYDFB_d4s0dKW0"; // Telegram bot token

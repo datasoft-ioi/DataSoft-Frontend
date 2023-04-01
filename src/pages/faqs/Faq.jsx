@@ -8,7 +8,7 @@ export default function Faq() {
   const [faqs, setFaqs] = useState([]);
 
   async function GetTack() {
-    const response = await axios.get('https://soft.datashop.uz/api/');
+    const response = await axios.get('https://api.data-soft.uz/api/');
     setFaqs(response.data);
     console.log(response.data);
   }

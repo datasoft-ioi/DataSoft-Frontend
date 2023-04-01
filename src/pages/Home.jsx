@@ -29,7 +29,7 @@ import {app} from '../context/AppContext'
 export default function Home() {
 
     async function HeaderTitle() {
-        const response = await axios.get('https://soft.datashop.uz/hometitle/')
+        const response = await axios.get('https://api.data-soft.uz/hometitle/')
         setHeaderTitle(response.data);
     }
     useEffect(() => {
