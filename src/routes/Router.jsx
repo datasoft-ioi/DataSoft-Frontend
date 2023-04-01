@@ -6,6 +6,8 @@ import Faq from '../pages/faqs/Faq'
 import Home from '../pages/Home'
 import Portfolio from '../pages/Portfolio'
 import Service from '../pages/Service'
+import Footer from '../utils/Footer'
+import Navbar from '../utils/Navbar'
 
 // const router = createBrowserRouter([
 //     {
@@ -40,15 +42,21 @@ import Service from '../pages/Service'
 function Routers() {
     return (
         <BrowserRouter>
+            <div className="container">
+                <Navbar />
+            </div>
             <Routes>
-                <Route element={<Found/>} path="*" />
+                <Route element={<Found />} path="*" />
                 <Route element={<Home />} path="/" />
-                <Route element={<About/>} path="about" />
-                <Route element={<Service/>} path="services" />
-                <Route element={<Portfolio/> } path="portfolio" />
-                <Route element={<Faq/>} path="faq" />
-                <Route element={<Contact/>} path="contact" />
+                <Route element={<About />} path="about" />
+                <Route element={<Service />} path="services" />
+                <Route element={<Portfolio />} path="portfolio" />
+                <Route element={<Faq />} path="faq" />
+                <Route element={<Contact />} path="contact" />
             </Routes>
+            <div className="container">
+                <Footer />
+            </div>
         </BrowserRouter>
     )
 }

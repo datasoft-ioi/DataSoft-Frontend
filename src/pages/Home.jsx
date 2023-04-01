@@ -36,18 +36,10 @@ export default function Home() {
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
-    const [lauga , setlauga] = useState('uzb')
-
-    function LaugaChange() {
-        if (lauga == 'uzb') {
-            setlauga('rus')
-        } else {
-            setlauga('uzb')
-        }
-    }
+    const [lauga , setLauga] = useState('uzb')
 
     return (
-        <AppContext.Provider value={{lauga , setlauga , LaugaChange}}>
+        <AppContext.Provider value={{lauga}}>
             <div className="container">
                 <header>
                     {/* <Navbar/> */}
@@ -185,7 +177,7 @@ export default function Home() {
                         </div>
                     </div>
                 </main>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </AppContext.Provider>
     )

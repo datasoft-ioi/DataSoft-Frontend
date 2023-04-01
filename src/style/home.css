@@ -14,7 +14,7 @@
     background-size: cover;
 }
 
-.container header nav {
+.container  nav {
     height: 76px;
     width: 1150px;
     margin: 0px auto;
@@ -24,7 +24,7 @@
     z-index: 9;
 }
 
-.container header nav img {
+.container  nav img {
     width: 65px;
     height: 35px;
     cursor: pointer;
@@ -32,13 +32,13 @@
     align-self: center;
 }
 
-.container header nav ul {
+.container  nav ul {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.container header nav ul .tilChange {
+.container  nav ul .tilChange {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -47,30 +47,30 @@
     user-select: none;
 }
 
-.container header nav ul .tilChange img{
+.container  nav ul .tilChange img{
     width: 38px;
     height: 38px;
 }
 
-.container header nav .activeBurger {
+.container  nav .activeBurger {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.container header nav .navMenuBtn {
+.container  nav .navMenuBtn {
     display: none;
     color: #FFFFFF;
 }
 
-.container header nav ul li {
+.container  nav ul li {
     color: #FFFFFF;
     font-weight: 400;
     font-size: 17px;
     cursor: pointer;
 }
 
-.container header nav ul button {
+.container  nav ul button {
     width: 108px;
     height: 33px;
     background: #FF346D;
@@ -83,7 +83,7 @@
     transition: 0.3s;
 }
 
-.container header nav ul button:hover {
+.container  nav ul button:hover {
     transform: translateY(-3px);
     transition: 0.3s;
 }
@@ -808,7 +808,7 @@
         padding: 0px 20px;
     }
 
-    .container header nav {
+    .container  nav {
         width: 100%;
     }
 
@@ -952,7 +952,7 @@
         background-image: url(../images/mobileBacgrounf.png);
     }
 
-    .container header nav {
+    .container  nav {
         width: 100%;
         padding: 0px 20px;
         align-items: center;
@@ -960,7 +960,7 @@
         background-color: #131B1F;
     }
 
-    .container header nav ul {
+    .container  nav ul {
         width: 100%;
         height: 100vh;
         bottom: 0;
@@ -974,12 +974,12 @@
         display: none;
     }
 
-    .container header nav .navMenuBtn {
+    .container  nav .navMenuBtn {
         display: inline;
         z-index: 1;
     }
 
-    .container header nav .activeBurger {
+    .container  nav .activeBurger {
         display: flex;
         width: 100%;
         height: 100vh;
@@ -993,11 +993,11 @@
         left: 0;
     }
 
-    .container header nav ul li {
+    .container  nav ul li {
         font-size: 24px;
     }
 
-    .container header nav ul button {
+    .container  nav ul button {
         width: 300px;
         height: 53px;
         box-shadow: 0px 0px 30px #ff346d;

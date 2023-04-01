@@ -9,9 +9,6 @@ import spesX from '../images/spesX.png'
 export default function Portfolio() {
     return (
         <div className="container">
-            <header style={{ backgroundImage: 'none', height: 'auto' }}>
-                <Navbar />
-            </header>
             <main>
                 <div className="portfolio">
                     <span className="portfolioTitle">Our Projects</span>
@@ -51,7 +48,6 @@ export default function Portfolio() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     )
 }

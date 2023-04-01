@@ -14,9 +14,6 @@ import ImgGallary from './Gallary'
 export default function About() {
     return (
         <div className="container">
-            <header style={{ backgroundImage: 'none', height: 'auto' }}>
-                <Navbar />
-            </header>
             <main>
                 <div className="about" style={{ marginTop: '147px' }}>
                     <div className="aboutInfo">
@@ -71,7 +68,6 @@ export default function About() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     )
 }

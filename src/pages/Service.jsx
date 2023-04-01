@@ -16,9 +16,6 @@ export default function Service() {
     return (
         <>
             <div className="container">
-                <header style={{ backgroundImage: 'none', height: 'auto' }}>
-                    <Navbar />
-                </header>
                 <main>
                     <div className="services">
                         <span className="servicesTitle">Our Core Services</span>
@@ -79,7 +76,6 @@ export default function Service() {
                         </div>
                     </div>
                 </main>
-                <Footer />
             </div>
         </>
     )

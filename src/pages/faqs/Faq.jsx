@@ -19,9 +19,6 @@ export default function Faq() {
 
   return (
     <div className="container">
-      <header style={{ backgroundImage: 'none', height: 'auto' }}>
-        <Navbar />
-      </header>
       <main>
         <div className="faqs">
           <span className="faqsTitle">FAQ</span>
@@ -64,7 +61,6 @@ export default function Faq() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

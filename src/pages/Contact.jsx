@@ -9,9 +9,6 @@ import spesX from '../images/spesX.png'
 export default function Contact() {
     return (
         <div className="container">
-            <header style={{ backgroundImage: 'none', height: 'auto' }}>
-                <Navbar />
-            </header>
             <main>
                 <div className="contact">
                     <span className="contactTitle">Tell us about your project</span>
@@ -42,7 +39,6 @@ export default function Contact() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     )
 }
