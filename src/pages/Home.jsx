@@ -24,6 +24,7 @@ import ImgGallary from './Gallary'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
+import {app} from '../context/AppContext'
 
 export default function Home() {
 
@@ -37,19 +38,18 @@ export default function Home() {
 
     const [headerTitle, setHeaderTitle] = useState([])
 
-    const {lauga} = useContext(AppContext)
+    const {lauga , app} = useContext(AppContext)
 
     return (
         <>
             <div className="container">
                 <header>
-                    {/* <Navbar/> */}
                     {
                         headerTitle.map(item => (
                             <div className="header">
                                 <span className="headerTItle">{lauga == 'uzb' ? item.uz_title : item.ru_title}</span>
                                 <span className="headerInfo">{lauga == 'uzb' ? item.uz_mini_desc : item.ru_mini_desc}</span>
-                                <Link to="/contact"><button className="headerBtn">Bog'laning</button></Link>
+                                <Link to="/contact"><button className="headerBtn">Aloqa</button></Link>
                             </div>
                         ))
                     }
@@ -178,7 +178,6 @@ export default function Home() {
                         </div>
                     </div>
                 </main>
-                {/* <Footer /> */}
             </div>
         </>
     )
