@@ -49,7 +49,7 @@ export default function Home() {
                             <div className="header">
                                 <span className="headerTItle">{lauga == 'uzb' ? item.uz_title : item.ru_title}</span>
                                 <span className="headerInfo">{lauga == 'uzb' ? item.uz_mini_desc : item.ru_mini_desc}</span>
-                                <Link to="/contact"><button className="headerBtn">Aloqa</button></Link>
+                                <Link to="/contact"><button className="headerBtn">{lauga == 'uzb' ? 'Aloqa' : 'Коммуникация'}</button></Link>
                             </div>
                         ))
                     }
@@ -80,7 +80,7 @@ export default function Home() {
                         <ImgGallary />
                     </div>
                     <div className="portfolio">
-                        <span className="portfolioTitle">Our Projects</span>
+                        <span className="portfolioTitle">Our Projects</span>    
                         <div className="portfolios">
                             <a href="https://www.tesla.com/"><img src={tesla} alt="" /></a>
                             <a href="https://apple.com"><img src={apple} alt="" /></a>
