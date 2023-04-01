@@ -3,7 +3,7 @@ import Routers from './routes/Router';
 import router from "./routes/Router";
 import Footer from './utils/Footer';
 import Navbar from './utils/Navbar';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { AppContext } from './context/AppContext';
 
 
@@ -17,6 +17,18 @@ export default function App() {
             setLauga('uzb')
         }
     }
+
+    useEffect(() => {
+        const storedLauga = localStorage.getItem("lauga");
+        if (storedLauga) {
+          setLauga(storedLauga);
+        }
+      }, []);
+    
+      useEffect(() => {
+        localStorage.setItem("lauga", lauga);
+      }, [lauga]);
+    
 
     return (
         <>
