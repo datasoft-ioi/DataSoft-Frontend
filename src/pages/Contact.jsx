@@ -1,12 +1,29 @@
-import Navbar from '../utils/Navbar'
-import Footer from '../utils/Footer'
-import uzum from '../images/uzum.png'
-import tesla from '../images/tesla.png'
-import apple from '../images/apple.png'
-import spesX from '../images/spesX.png'
+import React, { useState } from "react";
+import axios from "axios";
 
 
 export default function Contact() {
+
+    const [message, setMessage] = useState("");
+
+    const handleInputChange = (event) => {
+      setMessage(event.target.value);
+    };
+  
+    const sendMessage = () => {
+      const chatId = "2064891580"; // Telegram chat ID
+      const token = "6242159717:AAFlCHciEkD4EDSldWbSLlYDFB_d4s0dKW0"; // Telegram bot token
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
+  
+      axios.get(url)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
     return (
         <div className="container">
             <main>
@@ -34,8 +51,8 @@ export default function Contact() {
                                 <option value="">Telegram</option>
                             </select>
                         </div>
-                        <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
-                        <button>Submit</button>
+                        <textarea value={message} onChange={handleInputChange} name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
+                        <button onClick={sendMessage}>Submit</button>
                     </div>
                 </div>
             </main>
