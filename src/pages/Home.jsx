@@ -15,7 +15,7 @@ import soft1 from '../images/soft1.svg'
 import soft2 from '../images/soft2.svg'
 import soft3 from '../images/soft3.svg'
 import soft4 from '../images/soft4.svg'
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { useState } from 'react'
 import Navbar from '../utils/Navbar'
@@ -36,10 +36,11 @@ export default function Home() {
     }, []);
 
     const [headerTitle, setHeaderTitle] = useState([])
-    const [lauga , setLauga] = useState('uzb')
+
+    const {lauga} = useContext(AppContext)
 
     return (
-        <AppContext.Provider value={{lauga}}>
+        <>
             <div className="container">
                 <header>
                     {/* <Navbar/> */}
@@ -179,6 +180,6 @@ export default function Home() {
                 </main>
                 {/* <Footer /> */}
             </div>
-        </AppContext.Provider>
+        </>
     )
 }
