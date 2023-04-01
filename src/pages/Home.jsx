@@ -50,7 +50,7 @@ export default function Home() {
         <AppContext.Provider value={{lauga , setlauga , LaugaChange}}>
             <div className="container">
                 <header>
-                    <Navbar/>
+                    {/* <Navbar/> */}
                     {
                         headerTitle.map(item => (
                             <div className="header">
