@@ -27,6 +27,7 @@ import { AppContext } from '../context/AppContext'
 import { ReactDOM } from 'react'
 import datashopLogo from '../images/datashop.svg'
 import datashop from '../images/datashop.png'
+import {FiLink} from 'react-icons/fi'
 
 export default function Home() {
 
@@ -86,7 +87,7 @@ export default function Home() {
                             <div className="portfolioMain">
                                 <img className='portfolioImg' src={datashop} alt="" />
                                 <img className='portffolioLogo' src={datashopLogo} alt="" />
-                                <span>Online Texnika Bozori</span>
+                                <span>Online Texnika Bozori <Link to='https://datashop.uz'><button className='portfolioLink'><FiLink size={'22px'} color='white'/></button></Link></span>
                             </div>
                         </div>
                     </div>

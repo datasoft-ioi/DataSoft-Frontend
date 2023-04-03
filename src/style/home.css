@@ -283,6 +283,11 @@
     cursor: pointer;
 }
 
+.gallaryImg {
+    border: 5px solid #00c2c238;
+    border-radius: 5px;
+}
+
 .container main .portfolio {
     width: 1150px;
     margin: 0 auto;
@@ -319,6 +324,16 @@
     flex-direction: column;
     align-items: start;
     gap: 6px;
+}
+
+.container main .portfolio .portfolios .portfolioMain .portfolioLink {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
 }
 
 .container main .portfolio .portfolios .portfolioMain span {
@@ -1072,6 +1087,7 @@
         flex-wrap: nowrap;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     .container main .portfolio .portfolios a {
@@ -1271,5 +1287,15 @@
         max-height: 30px;
         min-height: 30px;
         min-width: 30px;
+    }
+    .container main .portfolio .portfolios .portfolioMain {
+        width: 350px;
+        gap: 20px;
+    }
+
+    .container main .portfolio .portfolios .portfolioMain span {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }

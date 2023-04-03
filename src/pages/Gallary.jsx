@@ -62,6 +62,7 @@ function ImgGallary({ index }) {
       <Masonry columnsCount={3} gutter="10px">
         {images.map((image, i) => (
           <img
+            className="gallaryImg"
             key={i}
             src={URL + image.image}
             style={{ width: "100%", display: "block" }}
