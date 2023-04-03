@@ -28,11 +28,14 @@ import { ReactDOM } from 'react'
 
 export default function Home() {
 
+    const URL = 'https://api.data-soft.uz'
     async function HeaderTitle() {
         const response = await axios.get('https://api.data-soft.uz/hometitle/')
         const about = await axios.get('https://api.data-soft.uz/about/')
-        setHeaderTitle(response.data);
+        const portfolio = await axios.get('https://api.data-soft.uz/our/')
+        setHeaderTitle(response.data);  
         setAboutTitle(about.data)
+        setPortfolio(portfolio.data)
     }
     useEffect(() => {
         HeaderTitle();
@@ -40,6 +43,7 @@ export default function Home() {
 
     const [headerTitle, setHeaderTitle] = useState([])
     const [aboutTitle , setAboutTitle] = useState([])
+    const [portfolio , setPortfolio] = useState([])
 
     const {lauga , app} = useContext(AppContext)
     
@@ -75,12 +79,13 @@ export default function Home() {
                         <ImgGallary />
                     </div>
                     <div className="portfolio">
-                        <span className="portfolioTitle">{lauga == 'uzb' ? 'Ishlarimiz' : 'Наша работа'}</span>    
+                        <span className="portfolioTitle">{lauga == 'uzb' ? 'Loyhalarimiz' : 'Наша работа'}</span>    
                         <div className="portfolios">
-                            <a href="https://www.tesla.com/"><img src={tesla} alt="" /></a>
-                            <a href="https://apple.com"><img src={apple} alt="" /></a>
-                            <a href="https://uzum.uz"><img src={uzum} alt="" /></a>
-                            <a href="https://www.spacex.com/"><img src={spesX} alt="" /></a>
+                            {
+                                portfolio.map(item => (
+                                    <a href={item.url}><img src={URL + item.image} alt="" /></a>
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="services">
@@ -88,8 +93,12 @@ export default function Home() {
                         <div className="servicesMain">
                             <div className="servis">
                                 <div className="servisInfo">
-                                    <span className="servisInfo_Title">Website Development</span>
-                                    <p>Productive and engaging web solutions for smarter work and improved customer service</p>
+                                    <span className="servisInfo_Title">{lauga == 'uzb' ? 'Veb-sayt ishlab chiqish' : 'Развитие веб-сайта'}</span>
+                                    <p>{
+                                    lauga == 'uzb' ?
+                                     "Aqlliroq ishlash va mijozlarga xizmat ko'rsatishni yaxshilash uchun samarali va qiziqarli veb-ychimlar" 
+                                     : "Эффективные и привлекательные веб-решения для более эффективной работы и улучшения обслуживания клиентов"
+                                     }</p>
                                     <div className="servisInfoBtns">
                                         <button><img src={internet} alt="" /></button>
                                     </div>
@@ -98,8 +107,8 @@ export default function Home() {
                             </div>
                             <div className="servis">
                                 <div className="servisInfo">
-                                    <span className="servisInfo_Title">Bot Development</span>
-                                    <p>Native, hybrid, and cross-platform mobile apps for consumer-facing and corporate environments.</p>
+                                    <span className="servisInfo_Title">{lauga == 'uzb' ? "Botni ishlab chiqish" : "Разработка бота"}</span>
+                                    <p>{lauga == 'uzb' ? "Biz sizga ishinggizni osonlashtirish uchun sizga bot yaratib beramiz" : "Мы создадим для вас бота, который облегчит вам работу"}</p>
                                     <div className="servisInfoBtns">
                                         <button><img src={telegram} alt="" /></button>
                                         <button><img src={discord} alt="" /></button>
@@ -116,29 +125,41 @@ export default function Home() {
                             <img className='line' src={line} alt="" />
                             <div className="softwareMainStructura left">
                                 <div className="softwareMainStructuraInfo">
-                                    <span>Discover</span>
-                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                    <span>{lauga == 'uzb' ? "Kashf qiling" : "Откройте для себя это"}</span>
+                                    <p>{
+                                    lauga == 'uzb' ? "Biz izlanishlar orqali brendlarni shakllantiramiz, har qadamda taxminlarni rad etish uchun chuqur tadqiqotlarni qo'llaymiz." 
+                                        : "Мы создаем бренды с помощью исследований, применяя углубленные исследования, чтобы опровергать предположения на каждом этапе пути."
+                                    }</p>
                                 </div>
                                 <img src={soft1} alt="" className="softwareMainStructuraImg" />
                             </div>
                             <div className="softwareMainStructura right">
                                 <div className="softwareMainStructuraInfo">
-                                    <span>Design</span>
-                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                    <span>{lauga == 'uzb' ? "Dizayn" : "Дизайн"}</span>
+                                    <p>{
+                                        lauga == 'uzb' ? "Bizning dizayn yondashuvimiz foydalanuvchi oqimidan foydalanish qulayligini soddalashtirishga qaratilgan. Biz oddiy va jozibali noyob narsani yaratishdan xursandmiz."
+                                        : "Наш подход к дизайну направлен на упрощение юзабилити пользовательского потока. Мы рады создавать что-то уникальное, простое и привлекательное."
+                                    }</p>
                                 </div>
                                 <img src={soft2} alt="" className="softwareMainStructuraImg" />
                             </div>
                             <div className="softwareMainStructura left">
                                 <div className="softwareMainStructuraInfo">
-                                    <span>Build</span>
-                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                    <span>{lauga == 'uzb' ? "Ko'dlash" : "Кодирование"}</span>
+                                    <p>{
+                                        lauga == 'uzb' ? "Eng ilg'or texnologiyalardan foydalanib, biz biznesga asoslangan moslashuvchan va kengaytiriladigan echimlarni yaratib, samaradorlik va mahorat bilan quramiz."
+                                        : "Используя самые современные технологии, мы создаем гибкие и масштабируемые бизнес-ориентированные решения с эффективностью и мастерством."
+                                    }</p>
                                 </div>
                                 <img src={soft3} alt="" className="softwareMainStructuraImg" />
                             </div>
                             <div className="softwareMainStructura right">
                                 <div className="softwareMainStructuraInfo">
-                                    <span>Deliver</span>
-                                    <p>We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.</p>
+                                    <span>{lauga == 'uzb' ? "Yetkazib berish" : "Доставка"}</span>
+                                    <p>{
+                                        lauga == 'uzb' ? "Biz ishimizga ham, amaliyotimizga ham iterativ yondashamiz, har doim qilayotgan ishimizni yaxshilash yo'llarini qidiramiz."
+                                        : "Мы используем итеративный подход как к нашей работе, так и к нашей практике, всегда ищем способы улучшить то, что мы делаем."    
+                                    }</p>
                                 </div>
                                 <img src={soft4} alt="" className="softwareMainStructuraImg" />
                             </div>
@@ -148,12 +169,12 @@ export default function Home() {
                         <span className="contactTitle">{lauga == 'uzb' ? 'loyihangiz haqida bizga xabar bering' : 'Расскажите нам о своем проекте'}</span>
                         <div className="contactMain">
                             <div className="contactMainInfos">
-                                <input type="text" placeholder='First name' />
-                                <input type="text" placeholder='Last name' />
+                                <input type="text" placeholder={lauga == 'uzb' ? "Ism" : "Имя"} />
+                                <input type="text" placeholder={lauga == 'uzb' ? "Familiya" : "Фамилия"} />
                                 <input type="text" placeholder='Email' />
-                                <input type="text" placeholder='Phone' />
+                                <input type="text" placeholder={lauga == 'uzb' ? "Telefon" : "телефон"} />
                                 <select name="" id="">
-                                    <option value="" selected disabled hidden>Budget</option>
+                                    <option value="" selected disabled hidden>{lauga == 'uzb' ? "Byudjet" : "Бюджет"}</option>
                                     <option value="">0$-100$</option>
                                     <option value="">100$-300$</option>
                                     <option value="">300$-700$</option>
@@ -162,14 +183,14 @@ export default function Home() {
                                     <option value="">2000$+</option>
                                 </select>
                                 <select name="" id="">
-                                    <option value="" selected disabled hidden>Where did you hear about us?</option>
+                                    <option value="" selected disabled hidden>{lauga == 'uzb' ? "Biz haqimizda qayerdan eshitdingiz?" : "Как вы узнали о нас?"}</option>
                                     <option value="">Google</option>
                                     <option value="">Instagram</option>
                                     <option value="">Telegram</option>
                                 </select>
                             </div>
-                            <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
-                            <button>Submit</button>
+                            <textarea name="" id="" cols="30" rows="10" placeholder={lauga == 'uzb' ? "Xabar" : "Сообщение"}></textarea>
+                            <button>{lauga == 'uzb' ? "Yuborish" : "Отправка"}</button>
                         </div>
                     </div>
                 </main>
