@@ -14,7 +14,7 @@
     background-size: cover;
 }
 
-.container  nav {
+.container nav {
     height: 76px;
     width: 1150px;
     margin: 0px auto;
@@ -24,7 +24,7 @@
     z-index: 99;
 }
 
-.container  nav img {
+.container nav img {
     width: 65px;
     height: 35px;
     cursor: pointer;
@@ -32,13 +32,13 @@
     align-self: center;
 }
 
-.container  nav ul {
+.container nav ul {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.container  nav ul .tilChange {
+.container nav ul .tilChange {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -47,30 +47,30 @@
     user-select: none;
 }
 
-.container  nav ul .tilChange img{
+.container nav ul .tilChange img {
     width: 38px;
     height: 38px;
 }
 
-.container  nav .activeBurger {
+.container nav .activeBurger {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.container  nav .navMenuBtn {
+.container nav .navMenuBtn {
     display: none;
     color: #FFFFFF;
 }
 
-.container  nav ul li {
+.container nav ul li {
     color: #FFFFFF;
     font-weight: 400;
     font-size: 17px;
     cursor: pointer;
 }
 
-.container  nav ul button {
+.container nav ul button {
     width: 108px;
     height: 33px;
     background: #FF346D;
@@ -83,7 +83,7 @@
     transition: 0.3s;
 }
 
-.container  nav ul button:hover {
+.container nav ul button:hover {
     transform: translateY(-3px);
     transition: 0.3s;
 }
@@ -310,12 +310,36 @@
     gap: 20px;
 }
 
-.container main .portfolio .portfolios img {
-    max-width: 565px;
-    min-width: 565px;
-    max-height: 290px;
-    border-radius: 10px;
-    border: 1px solid #FFFFFF;
+.container main .portfolio .portfolios .portfolioMain {
+    width: 515px;
+    height: 400px;
+    background: linear-gradient(90.09deg, #15282F 0.06%, #323035 62.86%, #2b252a 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 6px;
+}
+
+.container main .portfolio .portfolios .portfolioMain span {
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+.container main .portfolio .portfolios .portfolioMain .portffolioLogo {
+    max-width: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.container main .portfolio .portfolios .portfolioMain .portfolioImg {
+    width: 100%;
+    height: auto;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .container main .services {
@@ -808,7 +832,7 @@
         padding: 0px 20px;
     }
 
-    .container  nav {
+    .container nav {
         width: 100%;
     }
 
@@ -952,7 +976,7 @@
         background-image: url(../images/mobileBacgrounf.png);
     }
 
-    .container  nav {
+    .container nav {
         width: 100%;
         padding: 0px 20px;
         align-items: center;
@@ -961,7 +985,7 @@
         z-index: 99;
     }
 
-    .container  nav ul {
+    .container nav ul {
         width: 100%;
         height: 100vh;
         bottom: 0;
@@ -975,12 +999,12 @@
         display: none;
     }
 
-    .container  nav .navMenuBtn {
+    .container nav .navMenuBtn {
         display: inline;
         z-index: 1;
     }
 
-    .container  nav .activeBurger {
+    .container nav .activeBurger {
         display: flex;
         width: 100%;
         height: 100vh;
@@ -994,11 +1018,11 @@
         left: 0;
     }
 
-    .container  nav ul li {
+    .container nav ul li {
         font-size: 24px;
     }
 
-    .container  nav ul button {
+    .container nav ul button {
         width: 300px;
         height: 53px;
         box-shadow: 0px 0px 30px #ff346d;

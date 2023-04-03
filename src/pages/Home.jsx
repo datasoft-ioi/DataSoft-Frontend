@@ -25,6 +25,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
 import { ReactDOM } from 'react'
+import datashopLogo from '../images/datashop.svg'
+import datashop from '../images/datashop.png'
 
 export default function Home() {
 
@@ -34,8 +36,8 @@ export default function Home() {
         const about = await axios.get('https://api.data-soft.uz/about/')
         const portfolio = await axios.get('https://api.data-soft.uz/our/')
         setHeaderTitle(response.data);  
-        setAboutTitle(about.data)
-        setPortfolio(portfolio.data)
+        setAboutTitle(about.data);
+        setPortfolio(portfolio.data);
     }
     useEffect(() => {
         HeaderTitle();
@@ -81,11 +83,11 @@ export default function Home() {
                     <div className="portfolio">
                         <span className="portfolioTitle">{lauga == 'uzb' ? 'Loyhalarimiz' : 'Наша работа'}</span>    
                         <div className="portfolios">
-                            {
-                                portfolio.map(item => (
-                                    <a href={item.url}><img src={URL + item.image} alt="" /></a>
-                                ))
-                            }
+                            <div className="portfolioMain">
+                                <img className='portfolioImg' src={datashop} alt="" />
+                                <img className='portffolioLogo' src={datashopLogo} alt="" />
+                                <span>Online Texnika Bozori</span>
+                            </div>
                         </div>
                     </div>
                     <div className="services">
