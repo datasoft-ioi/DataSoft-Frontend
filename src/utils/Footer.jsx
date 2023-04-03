@@ -2,9 +2,14 @@ import datalogo from '../images/datalogo.png'
 import gps from '../images/gps.svg'
 import phone from '../images/phone.svg'
 import sms from '../images/sms.svg'
+import { useContext } from 'react'
+import {AppContext} from '../context/AppContext'
 
 
 export default function Footer() {
+
+    const {lauga} = useContext(AppContext)
+
     return (
         <footer>
             <div className="footerCon">
@@ -25,21 +30,21 @@ export default function Footer() {
                     </div>
                     <div className="footerInfos">
                         <ul>
-                            <span>Xizmatlar</span>
+                            <span>{lauga == 'uzb' ? "Xizmatlar" : "Услуги"}</span>
                             <li>UI/UX Design</li>
                             <li>Mobile Development</li>
                             <li>Web Development</li>
                         </ul>
                         <ul>
-                            <span>Company</span>
-                            <li>About Us</li>
-                            <li>Career Opportunities</li>
-                            <li>FAQ's</li>
+                            <span>{lauga == 'uzb' ? "Kompaniya" : "Компания"}</span>
+                            <li>{lauga == 'uzb' ? "Biz haqimizda" : "о нас"}</li>
+                            <li>{lauga == 'uzb' ? "Karyera imkoniyatlari" : "Карьерные возможности"}</li>
+                            <li>{lauga == 'uzb' ? "Savollar" : "Вопросы"}</li>
                         </ul>
                     </div>
                 </div>
                 <div className="footerBottom">
-                    <span>2023 DataSoft, All rights reserved</span>
+                    <span>{lauga == 'uzb' ? "2023 DataSoft, Barcha huquqlar himoyalangan" : "2023 ДатаСофт, Все права защищены"}</span>
                     <img src={datalogo} alt="" />
                 </div>
             </div>

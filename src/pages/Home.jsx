@@ -45,7 +45,7 @@ export default function Home() {
     const [aboutTitle , setAboutTitle] = useState([])
     const [portfolio , setPortfolio] = useState([])
 
-    const {lauga , app} = useContext(AppContext)
+    const {lauga} = useContext(AppContext)
     
 
     return (
