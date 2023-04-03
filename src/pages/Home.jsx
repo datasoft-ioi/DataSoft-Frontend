@@ -71,11 +71,11 @@ export default function Home() {
                         <img src={aboutImg} alt="" />
                     </div>
                     <div className="gallery">
-                        <span className="galleryTitle">Gallery</span>
+                        <span className="galleryTitle">{lauga == 'uzb' ? 'Gallary' : 'Галерея'}</span>
                         <ImgGallary />
                     </div>
                     <div className="portfolio">
-                        <span className="portfolioTitle">Our Projects</span>    
+                        <span className="portfolioTitle">{lauga == 'uzb' ? 'Ishlarimiz' : 'Наша работа'}</span>    
                         <div className="portfolios">
                             <a href="https://www.tesla.com/"><img src={tesla} alt="" /></a>
                             <a href="https://apple.com"><img src={apple} alt="" /></a>
@@ -84,7 +84,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="services">
-                        <span className="servicesTitle">Our Core Services</span>
+                        <span className="servicesTitle">{lauga == 'uzb' ? 'Bizning Xizmatlar' : 'Наши сервисы'}</span>
                         <div className="servicesMain">
                             <div className="servis">
                                 <div className="servisInfo">
@@ -111,7 +111,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="software">
-                        <span className="softwareTitle">Software Development Process</span>
+                        <span className="softwareTitle">{lauga == 'uzb' ? "Dasturiy ta'minotni ishlab chiqish jarayoni" : 'Процесс разработки программного обеспечения'}</span>
                         <div className="softwareMain">
                             <img className='line' src={line} alt="" />
                             <div className="softwareMainStructura left">
@@ -145,7 +145,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="contact">
-                        <span className="contactTitle">Tell us about your project</span>
+                        <span className="contactTitle">{lauga == 'uzb' ? 'loyihangiz haqida bizga xabar bering' : 'Расскажите нам о своем проекте'}</span>
                         <div className="contactMain">
                             <div className="contactMainInfos">
                                 <input type="text" placeholder='First name' />
