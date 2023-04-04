@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     background-color: #131B1F;
+    margin-top: 76px;
 }
 
 .container header {
@@ -22,6 +23,25 @@
     align-items: center;
     justify-content: space-between;
     z-index: 99;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #131B1F;
+}
+
+.container .navfix {
+    width: 100%;
+    background-color: #131B1F;
+}
+
+.navCon {
+    height: 76px;
+    width: 1150px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .container nav img {
@@ -363,7 +383,6 @@
 .container main .portfolio .portfolios .portfolioMain .portfolioImg {
     width: 100%;
     height: auto;
-
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }

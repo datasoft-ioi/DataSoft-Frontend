@@ -160,7 +160,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="contact">
-                        <span className="contactTitle">{lauga == 'uzb' ? 'loyihangiz haqida bizga xabar bering' : 'Расскажите нам о своем проекте'}</span>
+                        <span className="contactTitle">{lauga == 'uzb' ? 'Loyihangiz haqida bizga xabar bering' : 'Расскажите нам о своем проекте'}</span>
                         <div className="contactMain">
                             <div className="contactMainInfos">
                                 <input type="text" placeholder={lauga == 'uzb' ? "Ism" : "Имя"} />
