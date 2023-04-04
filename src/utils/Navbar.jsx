@@ -39,7 +39,7 @@ export default function Navbar() {
             <ul className={burger}>
                 <Link onClick={isOpen} to='/About'><li>{lauga == 'uzb' ? 'Xaqimizda' : 'O нас'}</li></Link>
                 <Link onClick={isOpen} to='/services'><li>{lauga == 'uzb' ? 'Xizmatlar' : 'Услуги'}</li></Link>
-                <Link onClick={isOpen} to='/portfolio'><li>{lauga == 'uzb' ? 'Ishlarimiz' : 'портфолио'}</li></Link>
+                <Link onClick={isOpen} to='/portfolio'><li>{lauga == 'uzb' ? 'Loyhalarimiz' : 'портфолио'}</li></Link>
                 <Link onClick={isOpen} to='/faq'><li>{lauga == 'uzb' ? 'Savollar' : 'Вопросы'}</li></Link>
                 <Link onClick={isOpen} to='/contact'><button>{lauga == 'uzb' ? 'Aloqa' : 'Коммуникация'}</button></Link>
                 <div className="tilChange" onClick={laugaChange}> 

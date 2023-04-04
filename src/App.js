@@ -1,8 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Routers from './routes/Router';
-import router from "./routes/Router";
-import Footer from './utils/Footer';
-import Navbar from './utils/Navbar';
 import { useState , useEffect} from 'react';
 import { AppContext } from './context/AppContext';
 
