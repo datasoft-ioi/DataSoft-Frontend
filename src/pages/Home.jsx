@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
 import datashopLogo from '../images/datashop.svg'
-import datashop from '../images/datashop.png'
+import datashop from '../images/datap.png'
 import {FiLink} from 'react-icons/fi'
 
 export default function Home() {
@@ -78,7 +78,7 @@ export default function Home() {
                             <div className="portfolioMain">
                                 <img className='portfolioImg' src={datashop} alt="" />
                                 <img className='portffolioLogo' src={datashopLogo} alt="" />
-                                <span>Online Texnika Bozori <Link to='https://datashop.uz'><button className='portfolioLink'><FiLink size={'22px'} color='white'/></button></Link></span>
+                                <span>DataShop Online Texnika Bozori <Link to='https://datashop.uz'><button className='portfolioLink'><FiLink size={'22px'} color='white'/></button></Link></span>
                             </div>
                         </div>
                     </div>
