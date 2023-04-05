@@ -1,0 +1,32 @@
+{
+    "noutbuk": [
+        {
+            "asus":
+            [
+                {
+                    "name": "Tuf GAming"
+                },
+                {
+                    "name": "Rog"
+                },
+                {
+                    "name": "pad gaming"
+                }
+            ]
+        } ,
+        {
+            "acer":
+            [
+                {
+                    "name": "Tuf GAming"
+                },
+                {
+                    "name": "Rog"
+                },
+                {
+                    "name": "pad gaming"
+                }
+            ]
+        }
+    ]
+}

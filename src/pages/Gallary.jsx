@@ -4,12 +4,12 @@ import { IoMdClose } from 'react-icons/io'
 import axios from "axios";
 
 function ImgGallary({ index }) {
-  const URL = 'https://soft.datashop.uz'
+  const URL = 'http://api.data-soft.uz'
 
   const [data, setData] = useState({ img: '', i: 0 })
 
   async function GetTack() {
-    const response = await axios.get('https://api.data-soft.uz/gallery/');
+    const response = await axios.get('http://api.data-soft.uz/gallery/');
     setImages(response.data);
     setData({
       img: response.data[index], 
