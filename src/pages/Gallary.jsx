@@ -44,6 +44,7 @@ function ImgGallary({ index }) {
       setData({ img: '', i: 0 });
     }
   }
+
   const [url , setUrl] = useState('')
 
   return (

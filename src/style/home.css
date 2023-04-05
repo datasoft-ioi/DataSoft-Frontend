@@ -68,8 +68,8 @@
 }
 
 .container nav ul .tilChange img {
-    width: 38px;
-    height: 38px;
+    width: 35px;
+    height: 35px;
 }
 
 .container nav .activeBurger {
@@ -91,7 +91,7 @@
 }
 
 .container nav ul button {
-    width: 108px;
+    width: 118px;
     height: 33px;
     background: #FF346D;
     border-radius: 10px;
@@ -1327,5 +1327,10 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+    .container main .gallery .openImg .imgNext ,
+    .container main .gallery .openImg .imgPrev
+    {
+        bottom: 250px;
     }
 }
