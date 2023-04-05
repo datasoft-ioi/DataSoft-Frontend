@@ -17,7 +17,7 @@ export default function Service() {
             <div className="container">
                 <main>
                     <div className="services">
-                        <span className="servicesTitle">Our Core Services</span>
+                        <span className="servicesTitle">{lauga == 'uzb' ? "Bizning Xizmatlar" : "Наши услуги"}</span>
                         <div className="servicesMain">
                             <div className="servis">
                                 <div className="servisInfo">
