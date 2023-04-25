@@ -9,7 +9,7 @@ function ImgGallary({ index }) {
   const [data, setData] = useState({ img: '', i: 0 })
 
   async function GetTack() {
-    const response = await axios.get('http://api.data-soft.uz/gallery/');
+    const response = await axios.get('https://api.data-soft.uz/gallery/');
     setImages(response.data);
     setData({
       img: response.data[index], 
