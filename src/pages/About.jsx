@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import '../style/team.css'
 import shox from '../images/shox.png'
+import zafarbek from '../images/zaf.jpg'
 
 
 export default function About() {
@@ -41,6 +42,13 @@ export default function About() {
                         <div className='userInfo'>
                             <span className='userName'>Shaxzod</span>
                             <span className='userWorkInfo'>HTML , Senior Devloper</span>
+                        </div>
+                    </div>
+                    <div className="user">
+                        <img src={zafarbek} alt="" />
+                        <div className='userInfo'>
+                            <span className='userName'>Zafarbek</span>
+                            <span className='userWorkInfo'>HTML Hacker</span>
                         </div>
                     </div>
                 </div>

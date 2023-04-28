@@ -2,6 +2,10 @@
     width: 1150px;
     margin: auto;
     margin: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
 }
 
 .teams .user {
