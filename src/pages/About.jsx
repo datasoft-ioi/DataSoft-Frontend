@@ -5,6 +5,7 @@ import { AppContext } from '../context/AppContext'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import '../style/team.css'
+import shox from '../images/shox.png'
 
 
 export default function About() {
@@ -36,7 +37,7 @@ export default function About() {
                 </div>
                 <div className="teams">
                     <div className="user">
-                        <img src="http://api.data-soft.uz/media/media/galley/2023/04/25/DSC09867.JPG" alt="" />
+                        <img src={shox} alt="" />
                         <div className='userInfo'>
                             <span className='userName'>Shaxzod</span>
                             <span className='userWorkInfo'>HTML , Senior Devloper</span>
