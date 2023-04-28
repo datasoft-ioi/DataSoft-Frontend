@@ -1,0 +1,35 @@
+.teams {
+    width: 1150px;
+    margin: auto;
+}
+
+.teams .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.teams .user .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teams .user img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.teams .user .userName {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}
+
+.teams .user .userWorkInfo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #A7B4C8;
+}
